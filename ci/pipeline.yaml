@@ -1,0 +1,23 @@
+resources:
+  - name: resource-channelstream-repo
+    type: git
+    source:
+      uri: https://github.com/ergo/channelstream.git
+      branch: master
+
+jobs:
+  - name: job-run-tests
+    plan:
+      - get: resource-channelstream-repo
+      - task: run-tests
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: { repository: python,
+                      tag: 3.6.8-slim-stretch }
+          inputs:
+            - name: resource-channelstream-repo
+          run:
+            path: ls
+            args: [-alR]
