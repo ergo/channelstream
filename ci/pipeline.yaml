@@ -19,4 +19,4 @@ jobs:
           inputs:
             - name: resource-channelstream-repo
           run:
-            path: channelstream_test/ci/run_test.sh
+            path: resource-channelstream-repo/ci/run_test.sh

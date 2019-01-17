@@ -5,6 +5,6 @@ set -e
 
 ls -l
 
-cd channelstream_test;
+cd resource-channelstream-repo;
 pip install tox
 tox
