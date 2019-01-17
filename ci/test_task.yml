@@ -11,5 +11,8 @@ inputs:
 #  path: ls
 #  args: [-alR]
 
+#caches:
+#  - path: resource-channelstream-repo/.tox
+
 run:
   path: resource-channelstream-repo/ci/run_test.sh

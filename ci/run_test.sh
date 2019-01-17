@@ -5,11 +5,17 @@ set -e
 
 ls -l
 
-cd resource-channelstream-repo;
+echo Build failed for commit > TEST_RUN_STATUS
+echo XXXXX >> TEST_RUN_STATUS;
+# cat .git/commit_message >> TEST_RUN_STATUS;
 
-cat .git/commit_message;
+cd resource-channelstream-repo;
 
 pip install tox
 tox --skip-missing-interpreters
-touch tests_passed
+cd ..;
+touch tests_passed;
+echo Build succeeded for commit > TEST_RUN_STATUS
+echo XXXXX >> TEST_RUN_STATUS;
+# cat .git/commit_message >> TEST_RUN_STATUS;
 # change rev

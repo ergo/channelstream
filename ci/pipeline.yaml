@@ -26,4 +26,4 @@ jobs:
         ensure:
           put: notify
           params:
-            text: "Job 'test' failed"
+            textfile: TEST_RUN_STATUS
