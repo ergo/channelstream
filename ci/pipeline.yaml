@@ -1,3 +1,14 @@
+resource_types:
+  - name: slack-notification
+    type: docker-image
+    source:
+      repository: cfcommunity/slack-notification-resource
+
+  - name: notify
+    type: slack-notification
+    source:
+      url: ((slack-webhook))
+
 resources:
   - name: resource-channelstream-repo
     type: git
@@ -21,3 +32,11 @@ jobs:
             - name: resource-channelstream-repo
           run:
             path: resource-channelstream-repo/ci/run_test.sh
+        on_failure:
+          put: notify
+          params:
+            text: "Job 'test' failed"
+        on_success:
+          put: notify
+          params:
+            text: "Job 'test' OK"
