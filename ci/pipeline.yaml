@@ -4,11 +4,6 @@ resource_types:
     source:
       repository: cfcommunity/slack-notification-resource
 
-  - name: notify
-    type: slack-notification
-    source:
-      url: ((slack-webhook))
-
 resources:
   - name: resource-channelstream-repo
     type: git
@@ -16,27 +11,19 @@ resources:
       uri: https://github.com/ergo/channelstream.git
       branch: master
 
+  - name: notify
+    type: slack-notification
+    source:
+      url: ((slack-webhook))
+
 jobs:
   - name: job-run-tests
     plan:
       - get: resource-channelstream-repo
         trigger: true
       - task: run-tests
-        config:
-          platform: linux
-          image_resource:
-            type: docker-image
-            source: { repository: python,
-                      tag: 3.6.8-slim-stretch }
-          inputs:
-            - name: resource-channelstream-repo
-          run:
-            path: resource-channelstream-repo/ci/run_test.sh
-        on_failure:
+        file: resource-channelstream-repo/ci/test_task.yml
+        ensure:
           put: notify
           params:
             text: "Job 'test' failed"
-        on_success:
-          put: notify
-          params:
-            text: "Job 'test' OK"
