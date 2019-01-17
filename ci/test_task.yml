@@ -5,11 +5,11 @@ image_resource:
   source: { repository: python,
             tag: 3.6.8-slim-stretch }
 inputs:
-  - name: channelstream_test
+  - name: resource-channelstream-repo
 #
 #run:
 #  path: ls
 #  args: [-alR]
 
 run:
-  path: channelstream_test/ci/run_test.sh
+  path: resource-channelstream-repo/ci/run_test.sh
