@@ -9,6 +9,7 @@ jobs:
   - name: job-run-tests
     plan:
       - get: resource-channelstream-repo
+        trigger: true
       - task: run-tests
         config:
           platform: linux
