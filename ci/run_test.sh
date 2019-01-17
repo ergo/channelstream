@@ -7,4 +7,4 @@ ls -l
 
 cd resource-channelstream-repo;
 pip install tox
-tox
+tox --skip-missing-interpreters
