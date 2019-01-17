@@ -26,4 +26,4 @@ jobs:
         ensure:
           put: notify
           params:
-            text_file: TEST_RUN_STATUS
+            text_file: TEST_RUN_STATUS.txt
