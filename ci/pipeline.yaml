@@ -19,5 +19,4 @@ jobs:
           inputs:
             - name: resource-channelstream-repo
           run:
-            path: ls
-            args: [-alR]
+            path: channelstream_test/ci/run_test.sh
