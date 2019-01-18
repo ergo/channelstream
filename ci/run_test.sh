@@ -12,13 +12,14 @@ REV_ID="Local run"
 REV_MESSSAGE="Unknown"
 
 
-
 if [ -f $COMMIT_FILE ]; then
    REV_ID=$(cat resource-channelstream-repo/.git/short_ref)
    REV_MESSSAGE=$(cat $COMMIT_FILE)
 fi
 
-echo Build *FAILURE*: $APP_NAME rev: $REV_ID $REV_MESSSAGE > $NOTIFY_FILE
+echo Build *FAILURE*: Project $APP_NAME rev: $REV_ID $REV_MESSSAGE > $NOTIFY_FILE
+env
+cat $NOTIFY_FILE
 
 cd resource-channelstream-repo;
 
