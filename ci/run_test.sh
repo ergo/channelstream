@@ -5,7 +5,6 @@ set -e
 
 ls -l
 
-APP_NAME="Channelstream"
 NOTIFY_FILE="notify_message/TEST_RUN_STATUS.txt"
 COMMIT_FILE="resource-channelstream-repo/.git/commit_message"
 REV_ID="Local run"

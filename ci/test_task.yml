@@ -7,6 +7,9 @@ image_resource:
 inputs:
   - name: resource-channelstream-repo
 
+params:
+  app_name: Channelstream
+
 outputs:
   - name: notify_message
 #
