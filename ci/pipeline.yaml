@@ -23,6 +23,9 @@ jobs:
         trigger: true
       - task: run-tests
         file: resource-channelstream-repo/ci/test_task.yml
+        params:
+          app_name: Channelstream
+          foo: 1
         ensure:
           put: notify-slack
           params:
