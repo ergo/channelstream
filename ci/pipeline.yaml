@@ -25,7 +25,5 @@ jobs:
         file: resource-channelstream-repo/ci/test_task.yml
         ensure:
           put: notify
-          inputs:
-            - name: resource-channelstream-repo
           params:
             text_file: TEST_RUN_STATUS.txt

@@ -6,6 +6,9 @@ image_resource:
             tag: 3.6.8-slim-stretch }
 inputs:
   - name: resource-channelstream-repo
+
+outputs:
+  - name: notify_message
 #
 #run:
 #  path: ls
