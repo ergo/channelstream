@@ -16,7 +16,7 @@ if [ -f $COMMIT_FILE ]; then
    REV_MESSSAGE=$(cat $COMMIT_FILE)
 fi
 
-echo Build *FAILURE*: Project $APP_NAME rev: `$REV_ID` msg: _$REV_MESSSAGE_ > $NOTIFY_FILE
+echo Build *FAILURE*: Project $APP_NAME rev: `$REV_ID` msg: $REV_MESSSAGE > $NOTIFY_FILE
 
 cat $NOTIFY_FILE
 
@@ -28,4 +28,4 @@ pip install tox
 tox --skip-missing-interpreters
 cd ..;
 
-echo Build *SUCCESS*: Project $APP_NAME rev: `$REV_ID` msg: _$REV_MESSSAGE_ > $NOTIFY_FILE
+echo Build *SUCCESS*: Project $APP_NAME rev: `$REV_ID` msg: $REV_MESSSAGE > $NOTIFY_FILE
