@@ -26,6 +26,8 @@ jobs:
         ensure:
           put: notify-slack
           params:
+            username: Concourse CI
+            icon_emoji: ":cyclone:"
             text_file: notify_message/TEST_RUN_STATUS.txt
             text: |
               $TEXT_FILE_CONTENT
