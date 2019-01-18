@@ -21,6 +21,8 @@ echo Build *FAILURE*: Project $APP_NAME rev: `$REV_ID` msg: _$REV_MESSSAGE_ > $N
 
 cat $NOTIFY_FILE
 
+env
+
 cd resource-channelstream-repo;
 
 pip install tox
