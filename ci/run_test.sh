@@ -6,7 +6,7 @@ set -e
 ls -l
 
 NOTIFY_FILE="notify_message/TEST_RUN_STATUS.txt"
-COMMIT_FILE=".git/commit_message"
+COMMIT_FILE="resource-channelstream-repo/.git/commit_message"
 APP_NAME="Channelstream"
 
 echo $APP_NAME tests > $NOTIFY_FILE
