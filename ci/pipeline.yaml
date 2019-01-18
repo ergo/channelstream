@@ -28,9 +28,8 @@ jobs:
           params:
             text_file: notify_message/TEST_RUN_STATUS.txt
             text: |
+              $TEXT_FILE_CONTENT
               The build had a result. Check it out at:
               http://127.0.0.1:8080/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
               or at:
               http://127.0.0.1:8080/builds/$BUILD_ID
-
-              Result: $TEXT_FILE_CONTENT
